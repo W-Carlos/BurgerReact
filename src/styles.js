@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Burger from './assets/burger.svg'
 
 export const Container = styled.div `
 
@@ -7,7 +8,7 @@ export const Container = styled.div `
 `
 
 export const Image = styled.img `
-
+    url
 `
 
 export const ContainerItem = styled.div `
