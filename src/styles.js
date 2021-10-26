@@ -97,3 +97,44 @@ export const Button = styled.button `
 
     
 `
+
+export const Order = styled.li `
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 18px 0px;
+
+    width: 342px;
+    height: 101px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    border: none;
+    outline: none;
+
+    color: #fff;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+
+    img {
+        cursor: pointer;
+    }
+
+`
+
+export const Div = styled.div `
+    width: 188px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+`
+
+export const P = styled.p `
+    font-style: normal;
+    font-weight: bold;
+    
+    margin-top: 8px;
+        
+`

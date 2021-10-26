@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Burger from './assets/burger.png'
+import Trash from './assets/trash.png'
 
 import { 
   Container, 
@@ -8,13 +10,16 @@ import {
   H1, 
   InputLabel, 
   Input, 
-  Button 
+  Button,
+  Order,
+  Div,
+  P
 } from './styles'
 
 const App = () => {
 
   const orders = [
-    {id: Math.random(), order: "Cachorro-quente", clienteName: "Carlos"},
+    {id: Math.random(), order: "Cachorro-quente, Hamburguer, Coca-cola", clienteName: "Carlos"},
     {id: Math.random(), order: "Pizza", clienteName: "Maria"}
   ]
 
@@ -34,9 +39,15 @@ const App = () => {
 
         <ul>
           {orders.map((order) => (
-            <li key={order.id}>
-              {order.order} - {order.clienteName}
-            </li>
+            <Order key={order.id}>
+              <Div>
+                <p>{order.order}</p>
+                <P>{order.clienteName}</P>
+              </Div>
+              <div>
+                <img src={Trash} alt="deletar"/>
+              </div>
+            </Order>
           ))}
           
         </ul>
