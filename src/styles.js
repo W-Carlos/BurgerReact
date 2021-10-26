@@ -64,6 +64,10 @@ export const Input = styled.input `
     line-height: 21px;
     color: #FFFFFF;
 
+    &::placeholder {
+        color: #D0CFCF;
+    }
+
 `
 
 export const Button = styled.button `
@@ -90,4 +94,6 @@ export const Button = styled.button `
     &:active {
         opacity: 0.5;
     }
+
+    
 `
