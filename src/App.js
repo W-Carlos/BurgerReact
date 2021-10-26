@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import Burger from './assets/burger.png'
 import Trash from './assets/trash.png'
@@ -18,10 +18,12 @@ import {
 
 const App = () => {
 
-  const orders = [
-    {id: Math.random(), order: "Cachorro-quente, Hamburguer, Coca-cola", clienteName: "Carlos"},
-    {id: Math.random(), order: "Pizza", clienteName: "Maria"}
-  ]
+  //const orders = []
+  const [orders, setOrders] = useState([])
+
+  function addNewOrder(){
+    setOrders([{id: Math.random(), order: "Cachorro-quente, Hamburguer, Coca-cola", clienteName: "Carlos"}])
+  }
 
   return (
     <Container>
@@ -35,7 +37,7 @@ const App = () => {
         <InputLabel>Nome</InputLabel>
         <Input placeholder="Digite seu nome"></Input>
 
-        <Button>Novo Pedido</Button>
+        <Button onClick={addNewOrder}>Novo Pedido</Button>
 
         <ul>
           {orders.map((order) => (
