@@ -1,4 +1,5 @@
 import React from 'react'
+import Burger from './assets/burger.png'
 
 import { 
   Container, 
@@ -13,7 +14,7 @@ import {
 const App = () => {
   return (
     <Container>
-      <Image/>
+      <Image src={Burger} alt='logo-imagem'/>
       <ContainerItem>
         <H1>Faça seu pedido</H1>
 
