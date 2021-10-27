@@ -24,7 +24,7 @@ const App = () => {
   const [name, setName] = useState();
 
   function addNewOrder(){
-    setOrders([{id: Math.random(), order, name: name}])
+    setOrders([ ... orders, {id: Math.random(), order, name: name}])
     console.log(name) 
   }
 
