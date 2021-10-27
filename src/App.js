@@ -24,6 +24,7 @@ const App = () => {
   const inputName = useRef()
    
 
+  // Adiciona pedidos
   function addNewOrder(){
     setOrders([ 
       ...orders, 
@@ -33,6 +34,12 @@ const App = () => {
         name: inputName.current.value
       }
     ]) 
+  }
+
+  // Botão de deletar
+  function deleteOrder(orderId){
+    const newOrders = orders.filter(order => order.id !== orderId)
+    setOrders(newOrders)
   }
 
   return (
@@ -56,7 +63,7 @@ const App = () => {
                 <p>{order.order}</p>
                 <P>{order.name}</P>
               </Div>
-              <div>
+              <div onClick={() => deleteOrder(order.id)}>
                 <img src={Trash} alt="deletar"/>
               </div>
             </Order>
