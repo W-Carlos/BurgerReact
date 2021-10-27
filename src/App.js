@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 
 import Burger from './assets/burger.png'
 import Trash from './assets/trash.png'
@@ -20,20 +20,19 @@ const App = () => {
 
   //const orders = []
   const [orders, setOrders] = useState([]);
-  const [order, setOrder] = useState();
-  const [name, setName] = useState();
+  const inputOrder = useRef()
+  const inputName = useRef()
+   
 
   function addNewOrder(){
-    setOrders([ ... orders, {id: Math.random(), order, name: name}])
-    console.log(name) 
-  }
-
-  function changeInputOrder(event){
-    setOrder(event.target.value)
-  }
-
-  function changeInputName(event){
-    setName(event.target.value)
+    setOrders([ 
+      ...orders, 
+      {
+        id: Math.random(), 
+        order: inputOrder.current.value, 
+        name: inputName.current.value
+      }
+    ]) 
   }
 
   return (
@@ -43,10 +42,10 @@ const App = () => {
         <H1>Faça seu pedido</H1>
 
         <InputLabel>Pedido</InputLabel>
-        <Input onChange={changeInputOrder} placeholder="Digite seu pedido"></Input>
+        <Input ref={inputOrder} placeholder="Digite seu pedido"></Input>
 
         <InputLabel>Nome</InputLabel>
-        <Input onChange={changeInputName} placeholder="Digite seu nome"></Input>
+        <Input ref={inputName} placeholder="Digite seu nome"></Input>
 
         <Button onClick={addNewOrder}>Novo Pedido</Button>
 
