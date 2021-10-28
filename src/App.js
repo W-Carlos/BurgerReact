@@ -1,5 +1,7 @@
 import React, {useState, useRef} from 'react'
 
+import axios from 'axios'
+
 import Burger from './assets/burger.png'
 import Trash from './assets/trash.png'
 
@@ -25,15 +27,23 @@ const App = () => {
    
 
   // Adiciona pedidos
-  function addNewOrder(){
-    setOrders([ 
+  async function addNewOrder(){
+
+    const data = await axios.post("http://localhost:3001/firstOrder", {
+      order: inputOrder.current.value, 
+      clienteName: inputName.current.value
+    })
+
+    console.log(data)
+
+   /* setOrders([ 
       ...orders, 
       {
         id: Math.random(), 
         order: inputOrder.current.value, 
         name: inputName.current.value
       }
-    ]) 
+    ]) */
   }
 
   // Botão de deletar
