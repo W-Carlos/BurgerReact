@@ -29,21 +29,14 @@ const App = () => {
   // Adiciona pedidos
   async function addNewOrder(){
 
-    const data = await axios.post("http://localhost:3001/firstOrder", {
+    const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
       order: inputOrder.current.value, 
       clienteName: inputName.current.value
     })
 
-    console.log(data)
+    console.log(newOrder)
 
-   /* setOrders([ 
-      ...orders, 
-      {
-        id: Math.random(), 
-        order: inputOrder.current.value, 
-        name: inputName.current.value
-      }
-    ]) */
+    setOrders([...orders, newOrder]) 
   }
 
   // Botão de deletar
@@ -71,7 +64,7 @@ const App = () => {
             <Order key={order.id}>
               <Div>
                 <p>{order.order}</p>
-                <P>{order.name}</P>
+                <P>{order.clienteName}</P>
               </Div>
               <div onClick={() => deleteOrder(order.id)}>
                 <img src={Trash} alt="deletar"/>
