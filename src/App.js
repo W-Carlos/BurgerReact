@@ -29,14 +29,17 @@ const App = () => {
   // Adiciona pedidos
   async function addNewOrder(){
 
-    const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
+    /* const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
       order: inputOrder.current.value, 
       clienteName: inputName.current.value
     })
 
-    console.log(newOrder)
+    setOrders([...orders, newOrder]) */ 
 
-    setOrders([...orders, newOrder]) 
+    // Recuperando usuários no Back-end
+    const {data: showOrder} = await axios.get('http://localhost:3001/firstOrder')
+
+    setOrders(showOrder)
   }
 
   // Botão de deletar
