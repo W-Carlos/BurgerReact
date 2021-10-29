@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 
 import axios from 'axios'
 
@@ -29,18 +29,27 @@ const App = () => {
   // Adiciona pedidos
   async function addNewOrder(){
 
-    /* const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
+    const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
       order: inputOrder.current.value, 
       clienteName: inputName.current.value
     })
 
-    setOrders([...orders, newOrder]) */ 
+    setOrders([...orders, newOrder]) 
+  }
+
+  // Chamando os usuarios quando a aplicação inicia
+  useEffect(() => {
 
     // Recuperando usuários no Back-end
-    const {data: showOrder} = await axios.get('http://localhost:3001/firstOrder')
+    async function fetchOrders() {
+      const {data: showOrder} = await axios.get('http://localhost:3001/firstOrder')
 
     setOrders(showOrder)
-  }
+    }
+
+    fetchOrders()
+    
+  }, [])
 
   // Botão de deletar
   function deleteOrder(orderId){
