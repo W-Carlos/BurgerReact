@@ -1,8 +1,8 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import axios from 'axios'
 
-import Burger from '../../assets/burger.png'
+import ImageOrder from '../../assets/ImageOrder.png'
 import Trash from '../../assets/trash.png'
 
 import { 
@@ -10,32 +10,16 @@ import {
   Image, 
   ContainerItem, 
   H1, 
-  InputLabel, 
-  Input, 
   Button,
   Order,
   Div,
   P
 } from './styles'
 
-const App = () => {
+const Orders = () => {
 
   //const orders = []
   const [orders, setOrders] = useState([]);
-  const inputOrder = useRef()
-  const inputName = useRef()
-   
-
-  // Adiciona pedidos
-  async function addNewOrder(){
-
-    const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
-      order: inputOrder.current.value, 
-      clienteName: inputName.current.value
-    })
-
-    setOrders([...orders, newOrder]) 
-  }
 
   // Chamando os usuarios quando a aplicação inicia
   useEffect(() => {
@@ -61,17 +45,9 @@ const App = () => {
 
   return (
     <Container>
-      <Image src={Burger} alt='logo-imagem'/>
+      <Image src={ImageOrder} alt='logo-imagem'/>
       <ContainerItem>
-        <H1>Faça seu pedido</H1>
-
-        <InputLabel>Pedido</InputLabel>
-        <Input ref={inputOrder} placeholder="Digite seu pedido"></Input>
-
-        <InputLabel>Nome</InputLabel>
-        <Input ref={inputName} placeholder="Digite seu nome"></Input>
-
-        <Button onClick={addNewOrder}>Novo Pedido</Button>
+        <H1>Pedidos</H1>
 
         <ul>
           {orders.map((order) => (
@@ -88,9 +64,11 @@ const App = () => {
           
         </ul>
 
+        <Button>Voltar</Button>
+
       </ContainerItem>
     </Container>
   )
 }
 
-export default App
+export default Orders
