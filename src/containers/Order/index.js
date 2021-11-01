@@ -2,8 +2,8 @@ import React, {useState, useRef, useEffect} from 'react'
 
 import axios from 'axios'
 
-import Burger from './assets/burger.png'
-import Trash from './assets/trash.png'
+import Burger from '../../assets/burger.png'
+import Trash from '../../assets/trash.png'
 
 import { 
   Container, 
