@@ -52,7 +52,9 @@ const App = () => {
   }, [])
 
   // Botão de deletar
-  function deleteOrder(orderId){
+  async function deleteOrder(orderId){
+
+    await axios.delete(`http://localhost:3001/firstOrder/${orderId}`)
     const newOrders = orders.filter(order => order.id !== orderId)
     setOrders(newOrders)
   }
