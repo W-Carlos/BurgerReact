@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import {Link} from 'react-router-dom'
 
 export const Container = styled.div `
 
@@ -35,7 +35,9 @@ export const H1 = styled.h1 `
     margin-bottom: 50px;
 `
 
-export const Button = styled.button `
+export const Button = styled(Link) `
+    display: flex;
+
     width: 342px;
     height: 68px;
     background: rgba(255, 255, 255, 0.14);
@@ -47,6 +49,9 @@ export const Button = styled.button `
     font-weight: 900;
     font-size: 17px;
     line-height: 2px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 
     color: #FFFFFF;
 

@@ -64,7 +64,7 @@ const Orders = () => {
           
         </ul>
 
-        <Button>Voltar</Button>
+        <Button to="/">Voltar</Button>
 
       </ContainerItem>
     </Container>

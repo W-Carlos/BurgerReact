@@ -1,5 +1,4 @@
 import React, {useState, useRef} from 'react'
-
 import axios from 'axios'
 
 import Burger from '../../assets/burger.png'
@@ -45,7 +44,7 @@ const App = () => {
         <InputLabel>Nome</InputLabel>
         <Input ref={inputName} placeholder="Digite seu nome"></Input>
 
-        <Button onClick={addNewOrder}>Novo Pedido</Button>
+        <Button to="/order" onClick={addNewOrder}>Novo Pedido</Button>
 
       </ContainerItem>
     </Container>
