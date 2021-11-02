@@ -14,7 +14,8 @@ import {
   Button,
   Order,
   Div,
-  P
+  NameOrders,
+  Name
 } from './styles'
 
 const Orders = () => {
@@ -59,12 +60,12 @@ const Orders = () => {
           {orders.map((order) => (
             <Order key={order.id}>
               <Div>
-                <p>{order.order}</p>
-                <P>{order.clienteName}</P>
+                <NameOrders>{order.order}</NameOrders>
+                <Name>{order.clienteName}</Name>
               </Div>
-              <div onClick={() => deleteOrder(order.id)}>
+              <button onClick={() => deleteOrder(order.id)}>
                 <img src={Trash} alt="deletar"/>
-              </div>
+              </button>
             </Order>
           ))}
           
