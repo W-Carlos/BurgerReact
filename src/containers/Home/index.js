@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 import Burger from '../../assets/burger.png'
 
@@ -19,8 +20,9 @@ const App = () => {
   const [orders, setOrders] = useState([]);
   const inputOrder = useRef()
   const inputName = useRef()
-   
 
+  const history = useHistory()
+   
   // Adiciona pedidos
   async function addNewOrder(){
 
@@ -30,6 +32,8 @@ const App = () => {
     })
 
     setOrders([...orders, newOrder]) 
+
+    history.push("/order")
   }
 
   return (
@@ -44,7 +48,7 @@ const App = () => {
         <InputLabel>Nome</InputLabel>
         <Input ref={inputName} placeholder="Digite seu nome"></Input>
 
-        <Button to="/order" onClick={addNewOrder}>Novo Pedido</Button>
+        <Button onClick={addNewOrder}>Novo Pedido</Button>
 
       </ContainerItem>
     </Container>

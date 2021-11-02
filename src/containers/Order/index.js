@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useHistory } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -17,9 +18,10 @@ import {
 } from './styles'
 
 const Orders = () => {
-
   //const orders = []
   const [orders, setOrders] = useState([]);
+
+  const history = useHistory()
 
   // Chamando os usuarios quando a aplicação inicia
   useEffect(() => {
@@ -43,6 +45,10 @@ const Orders = () => {
     setOrders(newOrders)
   }
 
+  function goBackPage(){
+    history.push("/")
+  }
+
   return (
     <Container>
       <Image src={ImageOrder} alt='logo-imagem'/>
@@ -64,7 +70,7 @@ const Orders = () => {
           
         </ul>
 
-        <Button to="/">Voltar</Button>
+        <Button onClick={goBackPage}>Voltar</Button>
 
       </ContainerItem>
     </Container>
