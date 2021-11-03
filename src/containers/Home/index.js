@@ -26,14 +26,19 @@ const App = () => {
   // Adiciona pedidos
   async function addNewOrder(){
 
-    const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
+    if(inputOrder.current.value === "" || inputName.current.value === ""){
+      alert("Por favor preencha todos os campos!")
+    } else {
+      const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
       order: inputOrder.current.value, 
       clienteName: inputName.current.value
-    })
+      })
 
-    setOrders([...orders, newOrder]) 
+      setOrders([...orders, newOrder]) 
 
-    history.push("/order")
+      history.push("/order")
+    }
+
   }
 
   return (
@@ -43,10 +48,10 @@ const App = () => {
         <H1>Faça seu pedido</H1>
 
         <InputLabel>Pedido</InputLabel>
-        <Input ref={inputOrder} placeholder="Digite seu pedido"></Input>
+        <Input ref={inputOrder} placeholder="Ex: 1 X-Tudo, 1 Coca-cola"></Input>
 
         <InputLabel>Nome</InputLabel>
-        <Input ref={inputName} placeholder="Digite seu nome"></Input>
+        <Input ref={inputName} placeholder="Ex: Pedro Silva"></Input>
 
         <Button onClick={addNewOrder}>Novo Pedido</Button>
 

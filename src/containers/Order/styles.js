@@ -107,6 +107,7 @@ export const Button = styled.button `
     border: none;
     outline: none;
     cursor: pointer;
+    border-radius: 14px;
 
     font-style: normal;
     font-weight: 900;

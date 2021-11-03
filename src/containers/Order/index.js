@@ -24,10 +24,10 @@ const Orders = () => {
 
   const history = useHistory()
 
-  // Chamando os usuarios quando a aplicação inicia
+  // Chamando os pedidos quando a aplicação inicia
   useEffect(() => {
 
-    // Recuperando usuários no Back-end
+    // Recuperando pedidos no Back-end
     async function fetchOrders() {
       const {data: showOrder} = await axios.get('http://localhost:3001/firstOrder')
 
