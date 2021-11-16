@@ -1,5 +1,6 @@
 <h1 align="center"> 
-    <img src="./src/assets/burger.png" width="180px" alt="logo-burger">
+    <img src="./src/assets/burger.png" width="250px" alt="logo-burger">
+    <p>BurgerReact</p>
 </h1>
 
 > ## 💻 Projeto
