@@ -1,5 +1,5 @@
 <h1 align="center"> 
-    <img src="./src/assets/burger.png" width="150px" alt="logo-burger">
+    <img src="./src/assets/burger.png" width="180px" alt="logo-burger">
 </h1>
 
 > ## 💻 Projeto
