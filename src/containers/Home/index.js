@@ -2,6 +2,8 @@ import React, {useState, useRef} from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 
+import Swal from 'sweetalert2'
+
 import Burger from '../../assets/burger.png'
 
 import { 
@@ -11,7 +13,8 @@ import {
   H1, 
   InputLabel, 
   Input, 
-  Button
+  Button,
+  ButtonOrder
 } from './styles'
 
 const App = () => {
@@ -27,18 +30,34 @@ const App = () => {
   async function addNewOrder(){
 
     if(inputOrder.current.value === "" || inputName.current.value === ""){
-      alert("Por favor preencha todos os campos!")
+      
+      Swal.fire({
+        icon: 'error',
+        title: 'Por favor preencha todos os campos!'
+      })
     } else {
+      Swal.fire(
+        'Obrigado. Seu pedido foi feito!',
+        'click no botão!',
+        'success'
+      )
       const {data: newOrder} = await axios.post("http://localhost:3001/firstOrder", {
       order: inputOrder.current.value, 
       clienteName: inputName.current.value
       })
 
+      inputOrder.current.value = ""
+      inputName.current.value = ""
+
       setOrders([...orders, newOrder]) 
 
-      history.push("/order")
+      //history.push("/order")
     }
 
+  }
+
+  async function allOrders(){
+   await history.push("/order")
   }
 
   return (
@@ -54,6 +73,7 @@ const App = () => {
         <Input ref={inputName} placeholder="Ex: Pedro Silva"></Input>
 
         <Button onClick={addNewOrder}>Novo Pedido</Button>
+        <ButtonOrder onClick={allOrders}>Todos os pedidos</ButtonOrder>
 
       </ContainerItem>
     </Container>

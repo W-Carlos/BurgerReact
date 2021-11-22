@@ -15,7 +15,7 @@ export const Container = styled.div `
 
 export const Image = styled.img `
     margin-top: 11px;
-    width: 250px;
+    width: 240px;
 `
 
 export const ContainerItem = styled.div `
@@ -91,7 +91,7 @@ export const Button = styled.button `
     justify-content: center;
     text-decoration: none;
 
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     &:hover {
         opacity: 0.8;
@@ -104,3 +104,36 @@ export const Button = styled.button `
     
 `
 
+export const ButtonOrder = styled.button `
+    display: flex;
+
+    width: 342px;
+    height: 68px;
+    background: #9BC53D;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 14px;
+
+    font-style: normal;
+    font-weight: 900;
+    font-size: 17px;
+    line-height: 2px;
+
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    margin-bottom: 20px;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    
+`

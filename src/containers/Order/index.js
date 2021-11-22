@@ -31,7 +31,7 @@ const Orders = () => {
     async function fetchOrders() {
       const {data: showOrder} = await axios.get('http://localhost:3001/firstOrder')
 
-    setOrders(showOrder)
+      setOrders(showOrder)
     }
 
     fetchOrders()
