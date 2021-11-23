@@ -10,7 +10,7 @@ O intuito desse projeto é consolidar conceitos de React.js e consumo de APIs.
 Para ver o Back-end clique aqui: [API-Burger](https://github.com/W-Carlos/API-Burger)
 
 > ## 📸 Demo
-<img src="./src/assets/BurgerReact.gif">
+<img src="./src/assets/BurgerReact1.gif">
 
 > ## 🚀 Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -21,6 +21,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
 * [Styled-components](https://styled-components.com/)
 * [Axios](https://www.npmjs.com/package/axios)
+* [sweetalert2](https://sweetalert2.github.io/)
 
 ## Pré-requisitos
 
