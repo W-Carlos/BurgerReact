@@ -20,6 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * [Node.js](https://nodejs.org/en/)
 * [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
 * [Styled-components](https://styled-components.com/)
+* [React-router-dom](https://v5.reactrouter.com/web/guides/quick-start)
 * [Axios](https://www.npmjs.com/package/axios)
 * [sweetalert2](https://sweetalert2.github.io/)
 
