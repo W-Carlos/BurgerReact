@@ -22,6 +22,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 * [Styled-components](https://styled-components.com/)
 * [React-router-dom](https://v5.reactrouter.com/web/guides/quick-start)
 * [Axios](https://www.npmjs.com/package/axios)
+* [yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 * [sweetalert2](https://sweetalert2.github.io/)
 
 ## Pré-requisitos
